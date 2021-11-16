@@ -15,10 +15,35 @@ html {
  */
 
 body {
+  border-style: dotted;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #F8EAD7;
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+div.logo {
+  font-family: 'Bungee';
+}
+
+main {
+  border-style: dotted;
+  border-color: red;
+  background-color:antiquewhite;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  width: 90%;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

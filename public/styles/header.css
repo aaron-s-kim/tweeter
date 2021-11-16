@@ -1,0 +1,39 @@
+header {
+  /* border-style: dotted; */
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  /* align-items: flex-end; */
+
+  height: 520px;
+  width: 100%;
+
+  /* background: linear-gradient(darkcyan, white); */
+  /* background: radial-gradient(circle, rgb(0, 177, 177), white); */
+  background-color: #B4E5FF;
+  background-image: url("../images/bright-squares.png");
+
+}
+
+.profile {
+  /* border-style: dotted; */
+  
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile-avatar {
+  /* border-style: dotted; */
+  display: flex;
+  /* justify-content: center; */
+
+}
+.profile-name {
+  /* border-style: dotted; */
+  /* display: flex; */
+  /* justify-content: center; */
+
+}
