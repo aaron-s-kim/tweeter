@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/article-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,14 +38,12 @@
 
       <div class='nav-content-right'>
         <span class="nav-text"><strong>Write</strong> a new tweet</span>
-        <i id='arrow-icon' class="nav-content-right fas fa-angle-double-down"></i>
-        <!-- <i class="fa-solid fa-angles-down"></i> -->
+        <i id='i-arrow' class="nav-content-right fas fa-angle-double-down"></i>
       </div>
 
     </nav>
 
-    <header>
-      <div class="profile">
+    <header class="profile">
 
         <div class="profile-avatar">
             <img src="/images/profile-hex.png"> 
@@ -53,26 +52,55 @@
           <h2>Your Name</h2>
         </div>
         
-      </div>
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container" id="main-container">
 
       <section class="new-tweet">
-
         <form method="POST" action="/tweets">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-
           <div class="tweet-footer">
             <button class="tweet-button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <section class="all-tweets">
+
+        <article class="tweet">
+          <header>
+            <div class="tweet-name">
+              <img class="i-avatar" src="https://i.imgur.com/73hZDYK.png" alt="avatar-icon">
+              <div id="display-name">Newton</div>
+            </div>
+            <div id="handle-name">@SirIsaac</div>
+          </header>
+
+          <div class="tweet-content">
+            If I have seen further it is by standing on the shoulders of giants
+          </div>
+
+          <footer>
+            <div class="time-passed">10 days ago</div>
+            <div class='icons'>
+              <i id='i-flag' class="fas fa-flag"></i>
+              <i id='i-retweet' class="fas fa-retweet"></i>
+              <i id='i-heart' class="fas fa-heart"></i>
+            </div>
+          </footer>
+          
+
+        </article>
+
         
       </section>
+
+
 
     </main>
     <div>Tweeter Megacorp</div>
   </body>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </html>

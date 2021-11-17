@@ -21,10 +21,14 @@
   opacity: 0.95;
   color: #FFFFFF;
 
+  z-index:1;
+
   /* visibility: hidden; */
 }
 
-#arrow-icon {
+/* small window resize clips profile */
+
+#i-arrow {
   display: flex;
   justify-content: center;
   color: #ff0000;

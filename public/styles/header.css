@@ -1,4 +1,4 @@
-header {
+header.profile {
   /* border: 2px dotted black; */
   display: flex;
   justify-content: center;
@@ -8,7 +8,10 @@ header {
 
   background-color: #B4E5FF;
   background-image: url("../images/bright-squares.png");
+
+  padding-top: 120px;
 }
+
 
 .profile {
   /* border: 2px dotted black; */
