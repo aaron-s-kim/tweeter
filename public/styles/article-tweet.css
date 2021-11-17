@@ -79,6 +79,6 @@ article.tweet footer div.icons {
 }
 
 #i-flag:hover, #i-retweet:hover, #i-heart:hover {
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
   color: goldenrod;
 }
