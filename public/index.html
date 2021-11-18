@@ -30,23 +30,6 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <!-- event listener to prevent default behaviour on submit -->
-    <script>
-
-      $(document).ready(function () {
-        $("form").submit(function(event) {
-          event.preventDefault(); // prevents triggering of default action
-
-          let qStr = $(this).serialize() // turns set of form data into query string; does not accept args
-          // console.log(qStr);
-          const url = $(this).attr("action");
-          $.post( url, qStr, function() { // Send data to server using HTTP POST request; equivalent to Ajax function
-            // console.log('success');
-          })
-
-        });
-      });
-
-      </script>
   </head>
 
   <body>

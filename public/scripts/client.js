@@ -6,50 +6,11 @@
 
 $(document).ready(function () {
 
-  // // Test / driver code (temporary). Eventually will get this from the server.
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png",
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ];
-
-  // $(function() {
-  //   const $button = $('#load-more-posts');
-  //   $button.on('click', function () {
-  //     console.log('Button clicked, performing ajax call...');
-      
-  //     $.ajax('more-posts.html', { method: 'GET' })
-  //     .then(function (morePostsHtml) {
-  //       console.log('Success: ', morePostsHtml);
-  //       $button.replaceWith(morePostsHtml);
-  //     });
-  //   });
-  // });
-
   // use AJAX to fetch (GET) data from server; receive arr of tweets as JSON
   const loadTweets = function() {
     $.ajax('/tweets', {method: 'GET'}) // http://localhost:8080/tweets
     .then(function(arrTweets) {
-      console.log('Success:', arrTweets);
+      // console.log('Success:', arrTweets);
       renderTweets(arrTweets);
     });
   };
@@ -88,6 +49,35 @@ $(document).ready(function () {
     `);
     return $tweet;
   };
+
+  $("form").submit(function(event) {
+
+    let textStr = $('#tweet-text').val();
+
+    console.log(textStr);
+    if (textStr === '') {
+      window.alert('text cannot be empty');
+      return false;
+    }
+    if (textStr === null) {
+      window.alert('text cannot null');
+      return false;
+    }
+    if (textStr.length > 140) {
+      window.alert('Over character limit');
+      return false;
+    }
+
+    event.preventDefault(); // prevents triggering of default action
+    let qStr = $(this).serialize() // turns set of form data into query string; does not accept args
+    console.log(qStr);
+
+    const url = $(this).attr("action");
+    $.post( url, qStr, function() { // Send data to server using HTTP POST request; equivalent to Ajax function
+      // console.log('success');
+    })
+
+  });
 
   // renderTweets(data);
 
