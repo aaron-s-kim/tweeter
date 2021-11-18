@@ -28,10 +28,24 @@
 
 /* small window resize clips profile */
 
+@keyframes updown {
+  0% {
+    transform: translateY(-50%);
+  };
+  50% {
+    transform: translateY(100%);
+  };
+  100% {
+    transform: translateY(-100%);
+  };
+}
+
 #i-arrow {
+  /* border: 2px dotted red; */
   display: flex;
   justify-content: center;
   color: #ff0000;
+  padding-top: 10px;
+
+  animation: updown 2s ease infinite;
 }
-
-

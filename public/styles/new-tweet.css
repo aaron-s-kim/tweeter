@@ -2,12 +2,15 @@
   /* border: 2px dotted red; */
   display: flex;
   justify-content: center;
+  text-align: center;
   color: #c51244;
   font-weight: bolder;
   background: #ffe0e8; 
-  /* border: 1px solid #c51244  */
-
+  padding: 5px;
+  border: 4px solid #c51244 ;
+  visibility: visible;
 }
+
 
 .new-tweet {
   /* border: 2px dotted black; */
