@@ -5,6 +5,9 @@
  */
 
 $(document).ready(function () {
+  if ( $('.new-tweet').is(":visible") ) {
+    $('.new-tweet').hide();
+  }
   if ( $('#error-message').is(":empty") ) {
     $('#error-message').hide();
   }
@@ -61,6 +64,15 @@ $(document).ready(function () {
     `);
 
   };
+
+  $('.arrow-button').on('click', function() {
+    if ( $('.new-tweet').is(":visible") ) {
+      console.log('helklasdfl;askfj');
+      $('.new-tweet').slideUp("slow");
+    } else {
+      $('.new-tweet').slideDown("slow");
+    }
+  });
 
   $("form").submit(function(event) {
     event.preventDefault(); // prevents triggering of default action
