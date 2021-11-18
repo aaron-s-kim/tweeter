@@ -31,17 +31,6 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <!-- event listener to prevent default behaviour on submit -->
     <script>
-      // $(function() {
-      //   const $button = $('#load-more-posts');
-      //   $button.on('click', function () {
-      //     console.log('Button clicked, performing ajax call...');
-      //     $.ajax('more-posts.html', { method: 'GET' })
-      //     .then(function (morePostsHtml) {
-      //       console.log('Success: ', morePostsHtml);
-      //       $button.replaceWith(morePostsHtml);
-      //     });
-      //   });
-      // });
 
       $(document).ready(function () {
         $("form").submit(function(event) {
@@ -51,8 +40,9 @@
           // console.log(qStr);
           const url = $(this).attr("action");
           $.post( url, qStr, function() { // Send data to server using HTTP POST request; equivalent to Ajax function
-            console.log('success');
+            // console.log('success');
           })
+
         });
       });
 
