@@ -34,18 +34,14 @@ $(document).ready(function () {
 
   // take in arr of tweet Objs, then append each to #tweets-container
   const renderTweets = function(tweets) {
-    // let $allTweets;
     
-    // loops through tweets
+    // can use regular for loop for consistency
     jQuery.each(tweets, (key) => {
       // console.log(tweets[key].user.name);
       const tweet = createTweetElement(tweets[key]);
-      // console.log(tweet);
       $('#tweets-container').append(tweet);
     });
 
-    // takes return value and appends it to the tweets container
-    // $tweet.append($allTweets); // use once we have a dynamic var
   }
 
   function createTweetElement(tweetData) {
