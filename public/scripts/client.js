@@ -6,17 +6,17 @@
 
 $(document).ready(function () {
 
-  // use AJAX to fetch (GET) data from server; receive arr of tweets as JSON
+  // use AJAX to fetch (GET) data from server; receive arr as JSON
   const loadTweets = function() {
     $.ajax('/tweets', {method: 'GET'}) // http://localhost:8080/tweets
     .then(function(arrTweets) {
-      // console.log('Success:', arrTweets);
-      renderTweets(arrTweets);
+      $('#tweets-container').empty(); // removes all child nodes of matched element from DOM
+      renderTweets(arrTweets.reverse());
     });
   };
   loadTweets();
 
-  // take in arr of tweet Objs, then append each to #tweets-container
+  // pass in arr of Objs, then append each to #tweets-container
   const renderTweets = function(tweets) {
     // Mentor: can use regular for loop for consistency
     jQuery.each(tweets, (key) => {
@@ -51,9 +51,9 @@ $(document).ready(function () {
   };
 
   $("form").submit(function(event) {
+    event.preventDefault(); // prevents triggering of default action
 
     let textStr = $('#tweet-text').val();
-
     console.log(textStr);
     if (textStr === '') {
       window.alert('text cannot be empty');
@@ -68,17 +68,13 @@ $(document).ready(function () {
       return false;
     }
 
-    event.preventDefault(); // prevents triggering of default action
-    let qStr = $(this).serialize() // turns set of form data into query string; does not accept args
-    console.log(qStr);
-
-    const url = $(this).attr("action");
-    $.post( url, qStr, function() { // Send data to server using HTTP POST request; equivalent to Ajax function
-      // console.log('success');
-    })
+    const url = $(this).attr("action"); // => '/tweets'
+    let queryStr = $(this).serialize() // turns set of form data into query string; does not accept args
+    $.post(url, queryStr, function() { // Send data to server using HTTP POST request; equivalent to Ajax function
+      $('#tweet-text').val(''); // resets textarea input after post; .val() to get/replace input element value
+      loadTweets();
+    });
 
   });
-
-  // renderTweets(data);
 
 });
