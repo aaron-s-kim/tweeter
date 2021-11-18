@@ -6,13 +6,8 @@
 
 $(document).ready(function () {
   if ( $('#error-message').is(":empty") ) {
-    // $('#error-message').empty();
     $('#error-message').hide();
   }
-  // if ( $('#error-message').is(":visible") ) {
-  //   $('#error-message').empty();
-  //   $('#error-message').slideUp();
-  // }
 
   // use AJAX to fetch (GET) data from server; receive arr as JSON
   const loadTweets = function() {
@@ -28,7 +23,7 @@ $(document).ready(function () {
   const renderTweets = function(tweets) {
     jQuery.each(tweets, (key) => {
       const tweet = createTweetElement(tweets[key]);
-      $('#tweets-container').prepend(tweet);
+      $('#tweets-container').prepend(tweet); // inserts to beginning of element
     });
   };
 
@@ -48,7 +43,7 @@ $(document).ready(function () {
     <article class="tweet">
       <header>
         <div class="tweet-name">
-          <img class="i-avatar" src="https://i.imgur.com/73hZDYK.png" alt="avatar-icon">
+          <img class="i-avatar" src="${avatars}" alt="avatar-icon">
           <div id="display-name">${name}</div>
         </div>
         <div id="handle-name">${handle}</div>
