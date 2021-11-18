@@ -25,20 +25,30 @@ $(document).ready(function () {
     });
   };
 
-  const createTweetElement = function(tweetData) {
+  const createTweetElement = ({ user, content, created_at }) => {
+    const { name, handle, avatars } = user;
+    const { text } = content;
+
+    const escape = function(str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
+    // return jQuery obj - constructed elements
     // timeago adds count once time-mark passes
-    let $tweet = $(`
+    return $(`
     <article class="tweet">
       <header>
         <div class="tweet-name">
           <img class="i-avatar" src="https://i.imgur.com/73hZDYK.png" alt="avatar-icon">
-          <div id="display-name">${tweetData.user.name}</div>
+          <div id="display-name">${name}</div>
         </div>
-        <div id="handle-name">${tweetData.user.handle}</div>
+        <div id="handle-name">${handle}</div>
       </header>
-      <div class="tweet-content">${tweetData.content.text}</div>
+      <div class="tweet-content">${escape(text)}</div>
       <footer>
-        <div class="time-passed">${timeago.format(Number(`${tweetData.created_at}`))}</div>
+        <div class="time-passed">${timeago.format(Number(`${created_at}`))}</div>
         <div class='icons'>
           <i id='i-flag' class="fas fa-flag"></i>
           <i id='i-retweet' class="fas fa-retweet"></i>
@@ -47,7 +57,7 @@ $(document).ready(function () {
       </footer>
     </article>
     `);
-    return $tweet;
+
   };
 
   $("form").submit(function(event) {
@@ -72,6 +82,7 @@ $(document).ready(function () {
     let queryStr = $(this).serialize() // turns set of form data into query string; does not accept args
     $.post(url, queryStr, function() { // Send data to server using HTTP POST request; equivalent to Ajax function
       $('#tweet-text').val(''); // resets textarea input after post; .val() to get/replace input element value
+      $('.counter').val(140); // resets textarea input after post; .val() to get/replace input element value
       loadTweets();
     });
 

@@ -1,3 +1,14 @@
+#error-message {
+  /* border: 2px dotted red; */
+  display: flex;
+  justify-content: center;
+  color: #c51244;
+  font-weight: bolder;
+  background: #ffe0e8; 
+  /* border: 1px solid #c51244  */
+
+}
+
 .new-tweet {
   /* border: 2px dotted black; */
   width: 100%;
@@ -15,8 +26,6 @@
   background: none;
   font-weight: bold;
 }
-
-
 
 .tweet-footer {
   /* border: 2px dotted black; */
