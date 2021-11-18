@@ -46,6 +46,27 @@ main {
   font-family: 'Bungee';
 }
 
+#i-arrow-up {
+  transform: rotateZ(180deg);
+  background: #ff0000;
+  color: white;
+  padding:30px;
+  border-radius: 50%;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+
+  opacity: 0.90;
+}
+
+#i-arrow-up:hover {
+  transition-duration: 0.4s;
+  box-shadow: 6px 5px 24px #666666;
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

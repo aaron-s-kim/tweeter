@@ -11,6 +11,9 @@ $(document).ready(function () {
   if ( $('#error-message').is(":empty") ) {
     $('#error-message').hide();
   }
+  if ( $('#i-arrow-up').is(":visible") ) {
+    $('#i-arrow-up').hide();
+  }
 
   // use AJAX to fetch (GET) data from server; receive arr as JSON
   const loadTweets = function() {
@@ -65,13 +68,18 @@ $(document).ready(function () {
 
   };
 
-  $('.arrow-button').on('click', function() {
+  $('#i-arrow').on('click', function() {
     if ( $('.new-tweet').is(":visible") ) {
-      console.log('helklasdfl;askfj');
       $('.new-tweet').slideUp("slow");
     } else {
       $('.new-tweet').slideDown("slow");
     }
+  });
+
+  $('#i-arrow-up').on('click', function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 'fast');
   });
 
   $("form").submit(function(event) {

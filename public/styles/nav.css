@@ -1,4 +1,4 @@
-.nav-bar {
+#navbar {
   /* border: 2px dotted red; */
   display: flex;
   flex-direction: row;
@@ -19,6 +19,8 @@
   background-color: #4056A1;
   opacity: 0.95;
   color: #FFFFFF;
+
+  transition: top 0.3s;
 
   /* visibility: hidden; */
 }
@@ -56,6 +58,7 @@
 }
 
 #i-arrow:hover {
+  transition-duration: 0.4s;
   color: #B4E5FF;
   filter: drop-shadow(0px 10px 3px black);
   animation: updown 0.4s linear infinite;

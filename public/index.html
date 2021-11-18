@@ -27,6 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
+    <script type="text/javascript" src="/scripts/composer.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <!-- event listener to prevent default behaviour on submit -->
@@ -34,7 +35,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class='nav-bar'>
+    <nav id='navbar'>
 
       <div class="logo">
         <span>tweeter</span>
@@ -81,6 +82,10 @@
       <section id="tweets-container">
 
       </section>
+
+      <button class="arrow-button" type="submit">
+        <span id='i-arrow-up' class="fas fa-angle-double-down"></span>
+      </button>
 
     </main>
     <div>Tweeter Megacorp</div>
