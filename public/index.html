@@ -31,12 +31,11 @@
     <script type="text/javascript" src="/scripts/composer.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <!-- event listener to prevent default behaviour on submit -->
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
 
+    <!-- Top nav bar (fixed) -->
     <nav id='navbar'>
       <div id="logo">tweeter</div>
       <div class='nav-bar-right'>
@@ -49,14 +48,16 @@
 
     <div class="large-container">
 
+      <!-- Profile section -->
       <header class="profile">
         <img id="profile-avatar"src="/images/profile-hex.png"> 
         <div id="profile-name">Aaron Kim</div>
       </header>
 
-      <!-- Page-specific (main) content here -->
+      <!-- Main content section for tweets -->
       <main class="main-container">
 
+        <!-- Compose new tweet -->
         <section class="new-tweet">
           <div id="error-message"></div>
           <form method="POST" action="/tweets">
@@ -68,10 +69,12 @@
           </form>
         </section>
 
+        <!-- Existing tweets -->
         <section id="tweets-container"></section>
 
       </main>
 
+      <!-- Scroll-to-top button -->
       <button class="arrow-button" type="submit">
         <span id='i-arrow-up' class="fas fa-angle-double-down"></span>
       </button>
