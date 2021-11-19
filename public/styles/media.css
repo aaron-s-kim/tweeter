@@ -1,0 +1,30 @@
+ /* How could the flex-direction property be useful here? */
+
+/* Tablet Styles */
+/* @media only screen and (min-width: 768px) to 1024 {
+} */
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  #navbar {
+    display: flex;
+    background-color: #4056A1;
+  }
+  .large-container {
+    /* border: 2px dotted red; */
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding-top: 120px;
+  }
+  header.profile {
+    width: 25%;
+    margin: 3em 2em;
+  }
+  .main-container {
+    width: 65%;
+    margin-top: 3em;
+  }
+  #tweet-text {
+    margin: 0;
+  }
+}

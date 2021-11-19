@@ -1,36 +1,29 @@
 #error-message {
-  /* border: 2px dotted red; */
+  border: 4px solid #c51244 ;
   display: flex;
   justify-content: center;
   text-align: center;
   color: #c51244;
-  font-weight: bolder;
   background: #ffe0e8; 
+  font-weight: bolder;
   padding: 5px;
-  border: 4px solid #c51244 ;
-  /* visibility: visible; */
 }
-
 
 .new-tweet {
   /* border: 2px dotted black; */
-  width: 100%;
 }
 
 #tweet-text {
   width: 100%;
   height: 2.5em;
-  margin-top: 1em;
-
+  margin-top: 2em;
   border: none;
   border-bottom: 4px solid #000000;
-  outline: none;
-
   background: none;
   font-weight: bold;
 }
 
-.tweet-footer {
+.new-tweet-footer {
   /* border: 2px dotted black; */
   display: flex;
   flex-direction: row;
@@ -43,7 +36,6 @@
   font-size: 0.8em;
 
   transition-duration: 0.4s;
-  
   border-radius: 10px;
   text-shadow: 3px 2px 1px #9daef5;
   box-shadow: 6px 5px 24px #666666;

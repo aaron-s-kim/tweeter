@@ -5,9 +5,10 @@
  */
 
 $(document).ready(function () {
-  if ( $('.new-tweet').is(":visible") ) {
-    $('.new-tweet').hide();
-  }
+  // temporarily visible as default for styling
+  // if ( $('.new-tweet').is(":visible") ) {
+  //   $('.new-tweet').hide();
+  // }
   if ( $('#error-message').is(":empty") ) {
     $('#error-message').hide();
   }

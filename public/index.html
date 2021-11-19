@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/article-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/media.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -35,60 +36,48 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
+
     <nav id='navbar'>
-
-      <div class="logo">
-        <span>tweeter</span>
-      </div>
-
+      <div id="logo">tweeter</div>
       <div class='nav-bar-right'>
         <span class="nav-text"><strong>Write</strong> a new tweet</span>
-
         <button class="arrow-button" type="submit">
           <span id='i-arrow' class="fas fa-angle-double-down"></span>
         </button>
       </div>
-
     </nav>
 
-    <header class="profile">
+    <div class="large-container">
 
-        <div class="profile-avatar">
-            <img src="/images/profile-hex.png"> 
-        </div>
-        <div class="profile-name">
-          <h2>Your Name</h2>
-        </div>
-        
-    </header>
+      <header class="profile">
+        <img id="profile-avatar"src="/images/profile-hex.png"> 
+        <div id="profile-name">Aaron Kim</div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container" id="main-container">
+      <!-- Page-specific (main) content here -->
+      <main class="main-container">
 
-      <section class="new-tweet">
+        <section class="new-tweet">
+          <div id="error-message"></div>
+          <form method="POST" action="/tweets">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div class="new-tweet-footer">
+              <button class="tweet-button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
 
-        <div id="error-message"></div>
+        <section id="tweets-container"></section>
 
-        <form method="POST" action="/tweets">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="tweet-footer">
-            <button class="tweet-button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-
-      </section>
-
-      <section id="tweets-container">
-
-      </section>
+      </main>
 
       <button class="arrow-button" type="submit">
         <span id='i-arrow-up' class="fas fa-angle-double-down"></span>
       </button>
 
-    </main>
-    <div>Tweeter Megacorp</div>
+    </div>
+    <footer id="main-footer">Tweeter Megacorp ©<footer>
   </body>
 
 </html>
