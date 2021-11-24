@@ -1,6 +1,7 @@
 # Tweeter Project
 
 Tweeter is a simple, single-page Twitter clone.
+This is a front-end (client-side) Single Page App that communicates with a server via AJAX.
 
 ## Final Product
 
